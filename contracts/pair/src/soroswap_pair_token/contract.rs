@@ -4,7 +4,7 @@ use crate::soroswap_pair_token::admin::{has_administrator, read_administrator, w
 use crate::soroswap_pair_token::allowance::{read_allowance, spend_allowance, write_allowance};
 use crate::soroswap_pair_token::balance::{read_balance, receive_balance, spend_balance};
 use crate::soroswap_pair_token::metadata::{read_decimal, read_name, read_symbol, write_metadata};
-#[cfg(test)]
+//#[cfg(test)]
 use crate::soroswap_pair_token::storage_types::{AllowanceDataKey, AllowanceValue, DataKey};
 use crate::soroswap_pair_token::storage_types::{INSTANCE_BUMP_AMOUNT, INSTANCE_LIFETIME_THRESHOLD};
 use soroban_sdk::token::{self, Interface as _};
@@ -67,7 +67,7 @@ impl SoroswapPairToken {
         TokenUtils::new(&e).events().set_admin(admin, new_admin);
     }
 
-    #[cfg(test)]
+//    #[cfg(test)]
     pub fn get_allowance(e: Env, from: Address, spender: Address) -> Option<AllowanceValue> {
         let key = DataKey::Allowance(AllowanceDataKey { from, spender });
         let allowance = e.storage().temporary().get::<_, AllowanceValue>(&key);

@@ -4,7 +4,7 @@ use soroban_sdk::token::Interface;
 use num_integer::Roots; 
 use soroswap_factory_interface::SoroswapFactoryClient;
 
-mod soroswap_pair_token;
+pub mod soroswap_pair_token;
 mod storage;
 mod balances;
 mod event;
